@@ -48,7 +48,7 @@ a::after {
     bottom: -3px;
     width: 0;
     height: 2px;
-    background-color: var(--c-primary);
+    background-color: var(--c-secondary);
     transition: width 0.3s ease-in-out;
 }
 
@@ -73,7 +73,6 @@ a:hover::after {
 
 }
 
-
 /* HOME */
 
 .home-sec {
@@ -81,7 +80,7 @@ a:hover::after {
     background-image: url('./assets/background.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.8;
+    opacity: 0.9;
     height: 100vh;
     width: 100vw;
 }
@@ -94,7 +93,6 @@ a:hover::after {
 
 .home-sec p {
     font-size: 2rem;
-    
 }
 
 .div-btn .btn {
@@ -102,9 +100,10 @@ a:hover::after {
     background-color: var(--c-secondary);
     color: white;
     border: none;
-    margin-top: 2rem;
-    
+    margin-top: 2rem;  
+    transition: all 0.3s ease;
 }
+
 .div-btn button {
     margin: 1rem;
 }
@@ -113,22 +112,41 @@ a:hover::after {
     background-color: transparent; 
     border: 2px solid var(--c-secondary); 
     color: var(--c-secondary); 
-    transform: scale(1.1); 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
     color: white;
-    /* transition: var(--transition); */
+    transform: scale(1.05);
 }
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-sec h1, .home-sec p {
+    animation: fadeIn 1s ease-out;
+}
+
+.div-btn button {
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+
 /* ABOUT */
 #about {
-    background-color: #f8f9fa; /* Light background for the section */
-    padding-top: 80px; /* Add top padding for spacing */
-    padding-bottom: 80px; /* Add bottom padding for spacing */
+    background-color: #f8f9fa; 
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 #about h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #333; /* Dark color for the heading */
+    color: #333; 
 }
 
 #about .container-fluid {
@@ -155,6 +173,14 @@ a:hover::after {
 
 /* SERVICE */
 
+
+
+
+
+
+
+
+
 #service {
     padding: 50px 0;
 }
@@ -174,6 +200,17 @@ a:hover::after {
     margin-top: 20px;
 }
 
+@keyframes cardFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
 .card {
     width: 18rem;
     border: none;
@@ -181,12 +218,15 @@ a:hover::after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: all 0.3s ease-in-out;
+    animation: cardFadeIn 1s ease-out forwards; 
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) !important;
+    transition: all 0.3s ease-in-out;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
 
 .card-header {
     background-color: var(--c-primary);
